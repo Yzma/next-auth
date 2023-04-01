@@ -101,6 +101,8 @@ export default async function callback(params: {
             return { redirect: isAllowed, cookies }
           }
         } catch (error) {
+          console.log("Testing")
+          logger.error("Error signing in: ", error)
           return {
             redirect: `${url}/error?error=${encodeURIComponent(
               (error as Error).message
